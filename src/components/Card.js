@@ -20,7 +20,7 @@ function Card(props) {
 
   return (
     <>
-      <div className="rounded-md text-center p-4 shadow-sm mt-5 mx-auto sm:max-w-md max-w-xs bg-black/40 backdrop-blur-xl">
+      <div className="rounded-md text-center p-4 shadow-sm mt-5 mx-auto max-w-md bg-black/40 backdrop-blur-xl">
         <div className=" text-white/90">
           <div className="">
             <img
