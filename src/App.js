@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./components/Nav";
+import Card from "./components/Card";
+import PokemonContextProvider from "./context/pokemon-context";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="font-mono w-screen h-screen bg-gradient-to-b from-pink-500 via-red-500 to-yellow-500 sm:p-0 overflow-auto ">
+      <PokemonContextProvider>
+        <Nav />
+        <Card />
+      </PokemonContextProvider>
+    </main>
   );
 }
 
