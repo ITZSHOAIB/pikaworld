@@ -44,7 +44,7 @@ function Card(props) {
             <img
               src={pokemon.sprite}
               alt={`Imagen: ${name}`}
-              className="rounded-lg w-full bg-black/30 h-52 w-52 sm:h-72 sm:w-72 mb-4 mx-auto p-4"
+              className="rounded-lg w-full bg-black/30 h-52 w-full sm:h-72 mb-4 mx-auto p-4"
             />
           </div>
           <h1 className="font-semibold text-white bg-pink-500 py-1 my-2 w-full mx-auto">
