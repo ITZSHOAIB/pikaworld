@@ -1,10 +1,9 @@
-import logo from "../logo.svg";
-import profilePic from "../profile-pic.png";
+import profilePic from "../assets/profile-pic.png";
 
 function Footer() {
   return (
     <>
-      <footer className="sticky bottom-0 px-4 py-4 bg-slate-900 text-white/80 ">
+      <footer className="px-4 py-4 bg-slate-900 text-white/80 mt-10">
         <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
           <div className="flex flex-row pr-3 space-x-4 sm:space-x-8">
             <div className="flex items-center justify-center flex-shrink-0 w-18 h-18 rounded-full">
@@ -16,9 +15,13 @@ function Footer() {
           </div>
           <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-4">
             <li>
-              <a rel="noopener noreferrer" href="https://www.linkedin.com/in/iitzshoaib/" className="flex items-center rounded-lg bg-white/20 px-3 py-1">
+              <a
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/iitzshoaib/"
+                className="flex items-center rounded-lg bg-white/20 px-3 py-1"
+              >
                 <svg
-                  class="w-4 h-4 text-white fill-current mr-2"
+                  className="w-4 h-4 text-white fill-current mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -28,7 +31,12 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://pokeapi.co/" className="flex items-center rounded-lg bg-white/20 px-3 py-1">PokeApi</a>
+              <a
+                href="https://pokeapi.co/"
+                className="flex items-center rounded-lg bg-white/20 px-3 py-1"
+              >
+                PokeApi
+              </a>
             </li>
           </ul>
         </div>

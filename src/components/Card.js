@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useState, useEffect } from "react"
 import { fetchPokemon } from "../services/fetchApi";
-import { PokemonContext } from "../context/pokemon-context";
+import SearchInput from "./SearchInput";
 
 function Card(props) {
-  const { pokemon, setPokemon } = useContext(PokemonContext);
+  const [pokemon, setPokemon] = useState({});
   const pokemonId = props.id || Math.floor(Math.random() * 100);
 
   useEffect(() => {
@@ -15,7 +15,6 @@ function Card(props) {
   if (pokemon.data === undefined) {
     return null;
   }
-
   const { name, stats, weight } = pokemon.data;
 
   const handleKeyPress = (event) => {
@@ -30,15 +29,11 @@ function Card(props) {
         });
     }
   };
+
   return (
     <>
       <div className="rounded-mg text-center p-4 shadow-sm mt-5 mx-auto w-full max-w-md bg-black/20 backdrop-blur-xl">
-        <input
-          type="text"
-          className="rounded-full placeholder:text-center placeholder:italic focus:outline-none px-4 py-2 focus:placeholder:text-white/60 w-full max-w-md h-8 text-white/60 border-b-2 border-white/80 bg-transparent mb-5"
-          placeholder="Enter your Pokemon name"
-          onKeyPress={handleKeyPress}
-        />
+        <SearchInput handleKeyPress={handleKeyPress} />
         <div className=" text-white/90">
           <div className="">
             <img
@@ -53,23 +48,25 @@ function Card(props) {
           </h1>
 
           <section className="border-b-2 mb-3 p-2">
-            <ul className="grid grid-rows-6">              
+            <ul className="grid grid-rows-6">
               {stats.map((object) => {
                 return (
                   <li key={object.stat.name} className="grid grid-cols-2">
                     <span className="text-left">
                       {object.stat.name.toUpperCase()}
                     </span>
-                    <span className="text-sky-300 font-semibold text-right">{object.base_stat}</span>
+                    <span className="text-sky-300 font-semibold text-right">
+                      {object.base_stat}
+                    </span>
                   </li>
                 );
               })}
             </ul>
           </section>
 
-          <footer className="flex justify-center">
+          <div className="flex justify-center">
             <span className="text-gray-200 text-sm">WEIGHT:{weight}</span>
-          </footer>
+          </div>
         </div>
       </div>
     </>
