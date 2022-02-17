@@ -32,7 +32,7 @@ function Card(props) {
   };
   return (
     <>
-      <div className="rounded-md text-center p-4 shadow-sm mt-5 mx-auto max-w-md bg-black/20 backdrop-blur-xl">
+      <div className="rounded-mg text-center p-4 shadow-sm mt-5 mx-auto w-full max-w-md bg-black/20 backdrop-blur-xl">
         <input
           type="text"
           className="rounded-full placeholder:text-center placeholder:italic focus:outline-none px-4 py-2 focus:placeholder:text-white/60 w-full max-w-md h-8 text-white/60 border-b-2 border-white/80 bg-transparent mb-5"
