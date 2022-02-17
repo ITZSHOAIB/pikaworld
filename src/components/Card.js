@@ -1,16 +1,12 @@
-import { useState, useEffect } from "react";
-import { fetchPokemon } from "../services/fetchApi";
+import { useState } from "react";
+import usePokemon from '../hooks/usePokemon'
+import useSearch from '../hooks/useSearch'
 import SearchInput from "./SearchInput";
 
 function Card(props) {
   const [pokemon, setPokemon] = useState({});
-  const pokemonId = props.id || Math.floor(Math.random() * 100);
-
-  useEffect(() => {
-    fetchPokemon(pokemonId).then((data) => {
-      setPokemon(data);
-    });
-  }, []);
+  const { handleKeyPress } = useSearch(setPokemon)
+  usePokemon(setPokemon)
 
   if (pokemon.data === undefined) {
     return null;
@@ -18,18 +14,6 @@ function Card(props) {
 
   const { name, abilities, stats, weight, height, id } = pokemon.data;
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      fetchPokemon(event.target.value.toLowerCase())
-        .then((data) => {
-          setPokemon(data);
-        })
-        .catch(() => console.log("No Pokemon Found with this name..."))
-        .finally(() => {
-          event.target.value = "";
-        });
-    }
-  };
 
   return (
     <>
