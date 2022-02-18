@@ -2,16 +2,14 @@ import { useContext, useEffect } from "react";
 import { fetchPokemon } from "../services/fetchApi";
 import { PokemonContext } from "../context/pokemon-context";
 
-export default function usePokemon(setLocalState, id = null) {
-  const { pokemon, setPokemon } = useContext(PokemonContext);
+export default function usePokemon(setLocalState, cardOrder, id = null) {
+  const { updatePokemon } = useContext(PokemonContext);
   const pokemonId = id || Math.floor(Math.random() * 100);
 
   useEffect(() => {
     fetchPokemon(pokemonId).then((data) => {
-      setPokemon(data);
+      updatePokemon(data, cardOrder);
       setLocalState(data);
     });
   }, []);
-
-  return pokemon;
 }

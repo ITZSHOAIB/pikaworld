@@ -4,7 +4,7 @@ import Card from "../components/Card";
 function Home() {
   return (
     <>
-      <Card />
+      <Card cardOrder={1} />
     </>
   );
 }
