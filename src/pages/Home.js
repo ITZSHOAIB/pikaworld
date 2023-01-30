@@ -1,10 +1,9 @@
-
-import Card from "../components/Card";
+import CardList from "../components/CardList";
 
 function Home() {
   return (
     <>
-      <Card cardOrder={1} />
+      <CardList />
     </>
   );
 }
