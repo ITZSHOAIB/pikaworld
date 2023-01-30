@@ -18,7 +18,7 @@ function CardList() {
 
   return (
     <>
-      <div className="flex flex-wrap justify-around h-full overflow-auto">
+      <div className="flex flex-wrap justify-around h-full overflow-auto px-3">
         {pokeList.map((pokemon, index) => {
           return <CardOuterHome key={index} pokemon={pokemon} />;
         })}
